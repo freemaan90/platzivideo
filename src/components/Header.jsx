@@ -1,24 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/components/Header.scss';
 import logo from '../assets/static/logo-platzi-video-BW2.png';
 import userIcon from '../assets/static/user-icon.png';
 
-const pageText = [ 'Perfil', 'Cuenta', 'Cerrar Sesión' ];
-
 const Header = () => (
-	<header className="header">
-		<img className="header__img" src={logo} alt="Platzi Video" />
-		<div className="header__menu">
-			<div className="header__menu--profile">
-				<img src={userIcon} alt="" />
-				<p>{pageText[0]}</p>
+	<header className='header'>
+		<Link to='/'>
+			<img className='header__img' src={logo} alt='Platzi Video' />
+		</Link>
+		<div className='header__menu'>
+			<div className='header__menu--profile'>
+				<img src={userIcon} alt='' />
+				<p>Perfil</p>
 			</div>
 			<ul>
 				<li>
-					<a href="/">{pageText[1]}</a>
+					<Link to='/'>Cuenta</Link>
 				</li>
 				<li>
-					<a href="/">{pageText[2]}</a>
+					<Link to='/login'>Iniciar Sesión</Link>
 				</li>
 			</ul>
 		</div>
