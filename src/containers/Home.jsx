@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import Search from '../components/Search';
+import Header from '../components/Header';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouseItem from '../components/CarouselItem';
@@ -9,7 +10,8 @@ import '../assets/styles/Home.scss';
 const Home = ({ myList, trends, originals }) => {
 	return (
 		<Fragment>
-			<Search />
+			<Header />
+			<Search isHome />
 			{myList.length > 0 && (
 				<Categories title={'Mi Lista'}>
 					<Carousel>

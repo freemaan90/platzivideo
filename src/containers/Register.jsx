@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
+import Header from '../components/Header';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { registerRequest } from '../actions/index';
@@ -22,38 +23,41 @@ const Register = (props) => {
 		props.history.push('/');
 	};
 	return (
-		<section className='register'>
-			<section className='register__container'>
-				<h2>Regístrate</h2>
-				<form
-					className='register__container--form'
-					onSubmit={handleSubmit}>
-					<input
-						className='input'
-						type='text'
-						placeholder='Nombre'
-						onChange={handleInput}
-						name='name'
-					/>
-					<input
-						className='input'
-						type='text'
-						placeholder='Correo'
-						name='email'
-						onChange={handleInput}
-					/>
-					<input
-						className='input'
-						type='password'
-						placeholder='Contraseña'
-						name='password'
-						onChange={handleInput}
-					/>
-					<button className='button'>Registrarme</button>
-				</form>
-				<Link to='/login'>Iniciar sesión</Link>
+		<Fragment>
+			<Header isRegister />
+			<section className='register'>
+				<section className='register__container'>
+					<h2>Regístrate</h2>
+					<form
+						className='register__container--form'
+						onSubmit={handleSubmit}>
+						<input
+							className='input'
+							type='text'
+							placeholder='Nombre'
+							onChange={handleInput}
+							name='name'
+						/>
+						<input
+							className='input'
+							type='text'
+							placeholder='Correo'
+							name='email'
+							onChange={handleInput}
+						/>
+						<input
+							className='input'
+							type='password'
+							placeholder='Contraseña'
+							name='password'
+							onChange={handleInput}
+						/>
+						<button className='button'>Registrarme</button>
+					</form>
+					<Link to='/login'>Iniciar sesión</Link>
+				</section>
 			</section>
-		</section>
+		</Fragment>
 	);
 };
 const mapStateToProps = {
